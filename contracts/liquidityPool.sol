@@ -93,7 +93,7 @@ contract LiquidityPool is ERC20 {
     function updateReward(address account) internal  {
        uint elapsedTime = block.timestamp - lastRewardUpdate[account];
        if (elapsedTime>0 && balances[account] > 0) {
-        rewards[account] += (balances[account] * rewardRate * elapsedTime)/1 seconds;
+        rewards[account] += (balances[account] * rewardRate * elapsedTime)/1;
        }
        lastRewardUpdate[account] = block.timestamp;
 
